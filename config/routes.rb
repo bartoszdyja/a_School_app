@@ -6,7 +6,14 @@ Rails.application.routes.draw do
     get :subjects
   end
 
-  resources :teachers
+  resources :teachers do
+    get :subjects
+  end
+
+  resources :subject_items
+
+  resources :visitors, only: :index
+
 
   get 'report/subjects', to: 'reports#subjects'
 end
