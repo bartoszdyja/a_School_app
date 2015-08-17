@@ -4,5 +4,6 @@ class StudentDecorator < BaseDecorator
   end
 
   def avg_notes(subject_item)
+    self.subject_item_notes.blank? ? 0.00 : 4.50
   end
 end
