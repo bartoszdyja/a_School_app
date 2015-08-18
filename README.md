@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/railsbeginner/School_app.svg)](https://travis-ci.org/railsbeginner/School_app)
+[![Build Status](https://travis-ci.org/railsbeginner/School_app.svg?branch=master)](https://travis-ci.org/railsbeginner/School_app)
 
 RoR Workshops
 ================
