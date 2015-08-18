@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/railsbeginner/School_app.svg)](https://travis-ci.org/railsbeginner/School_app)
+
 RoR Workshops
 ================
 
