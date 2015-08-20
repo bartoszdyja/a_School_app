@@ -15,3 +15,8 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require_tree .
+
+$(document).ready ->
+  @showBirthdayForm = ->
+    $(".student_birthdate").toggle()
+    $("#b_link").hide()

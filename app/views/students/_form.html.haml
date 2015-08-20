@@ -1,6 +1,10 @@
 = simple_form_for student do |f|
   = f.input :first_name
   = f.input :last_name
+  = link_to 'Birthdate:', "", onclick: "showBirthdayForm()", remote: true, id: "b_link"
+  = f.input :birthdate, as: :date, include_blank: true
   = f.association :subject_items, label_method: :title, value_method: :id, label: 'Subject Items', as: :check_boxes
   = link_to t('shared.back'), students_path, class: 'btn btn-default'
   = f.button :submit
+
+
