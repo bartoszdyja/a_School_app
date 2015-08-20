@@ -15,5 +15,10 @@ Rails.application.routes.draw do
   resources :visitors, only: :index
 
 
-  get 'report/subjects', to: 'reports#subjects'
+  namespace :reports, as: 'report' do
+   get :subjects
+   get :payments
+  end
+
+
 end
