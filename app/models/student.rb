@@ -10,6 +10,6 @@ class Student < ActiveRecord::Base
 
 
   def formatted_birthdate
-    birthdate.strftime.gsub(/-(?!.*-)/,"_")
+    birthdate.to_s.gsub(/-(?!.*-)/,"_")
   end
 end
