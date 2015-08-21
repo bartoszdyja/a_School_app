@@ -15,7 +15,6 @@ class Student < ActiveRecord::Base
   end
 
   def set_default_payment_date
-    @p = Payment.new(payment_date: Date.today + 30.days, student: self)
-    @p.save
+    Payment.create!(payment_date: Date.today + 30.days, student: self)
   end
 end

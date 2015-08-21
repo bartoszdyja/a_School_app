@@ -4,6 +4,7 @@ en:
     teachers: Teachers
     reports: Reports
     reports_subjects: Subjects
+    reports_payments: Payments
     logout: Logout
     signin: Sign in
     signup: Sign up
@@ -24,6 +25,8 @@ en:
       first_name: first name
       last_name: last name
       birthdate: birthdate
+      balance: balance
+      payment_date: payment due
   teacher:
     columns:
       first_name: first name
