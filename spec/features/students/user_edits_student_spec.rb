@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'User edits student' do
-  let!(:student) { create :student, first_name: 'Jan', last_name: 'Abacki' }
+  let!(:student) { create :student, first_name: 'Jan', last_name: 'Abacki', birthdate: '2014-01-01' }
   let!(:subject_item) { create :subject_item, title: 'Math' }
 
   background do
@@ -28,6 +28,17 @@ feature 'User edits student' do
     fill_in 'First name', with: ''
     click_button 'Update Student'
     expect(page).to have_content "can't be blank"
+  end
+
+  scenario 'display birthday on report if assigned subjects' do
+    visit report_subjects_path
+    expect(page).to_not have_content '2014-01_01'
+    visit students_path
+    find(:xpath, "//a[@title='edit']").click
+    find("input[type='checkbox']").set(true)
+    click_button 'Update Student'
+    visit report_subjects_path
+    expect(page).to have_content '2014-01_01'
   end
 
   scenario 'by assigning subject item' do

@@ -100,4 +100,18 @@ RSpec.describe StudentsController do
       expect{ subject }.to change(Student, :count).by(-1)
     end
   end
+
+  describe 'UPDATE birthdate' do
+    let!(:student) { create :student, first_name: 'Mary', last_name: 'Green', birthdate: Date.yesterday }
+    let(:birthdate) { Date.today }
+    let!(:params) do
+      { id: student.id, student: { birthdate: birthdate } }
+    end
+    subject { put :update, params }
+
+      context 'updates student' do
+        subject { -> { put :update, params } }
+        it { is_expected.to change{ student.reload.birthdate }.to(birthdate) }
+      end
+  end
 end
