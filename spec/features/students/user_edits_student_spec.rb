@@ -30,7 +30,7 @@ feature 'User edits student' do
     expect(page).to have_content "can't be blank"
   end
 
-  scenario 'display birthday on report if assigned subjects' do
+  scenario 'display birthday on report only for assigned students' do
     visit report_subjects_path
     expect(page).to_not have_content '2014-01_01'
     visit students_path

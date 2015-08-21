@@ -46,12 +46,21 @@ RSpec.describe StudentsController do
       it 'creates student' do
         expect{ subject }.to change(Student, :count).by(1)
       end
+
     end
 
     context 'failure' do
       include_context 'record save failure'
 
       it_behaves_like 'template rendering action', :new
+    end
+
+  end
+
+  describe 'POST #create User' do
+    let!(:student) { create :student, first_name: 'John', last_name: 'Smith' }
+    it 'sets default payment balance' do
+        expect(student.payment.balance).to eq 0
     end
   end
 
@@ -111,7 +120,9 @@ RSpec.describe StudentsController do
 
       context 'updates student' do
         subject { -> { put :update, params } }
-        it { is_expected.to change{ student.reload.birthdate }.to(birthdate) }
+        it { is_expected.to change{ student.reload.birthdate }.to(birthdate) } 
       end
+
+      
   end
 end
