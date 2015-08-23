@@ -12,7 +12,7 @@ User.create!(email: 'admin@admin.com',password: 'adminadmin')
 end
 
 teachers = Teacher.all
-4.times do
+5.times do
   SubjectItem.create!(
     title: SUBJECTS.sample,
     teacher: teachers.sample
