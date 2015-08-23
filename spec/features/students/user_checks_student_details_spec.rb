@@ -15,4 +15,10 @@ feature 'User checks student details' do
       expect(page).to have_content 'RoR Workhops » Students » Jan Nowak'
     end
   end
+
+  scenario 'show payment details only when sign in' do
+    logout
+    visit report_payments_path
+    expect(page).to have_content 'You need to sign in or sign up before continuing.'
+  end
 end

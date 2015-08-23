@@ -47,4 +47,5 @@ feature 'User creates student' do
     expect(page).to have_content "birthdate"
     expect(page).to have_content "2010-01_01"
   end
+
 end
