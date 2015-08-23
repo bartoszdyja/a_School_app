@@ -11,12 +11,17 @@
 # about supported directives.
 #
 #= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
-#= require turbolinks
 #= require bootstrap-sprockets
+#= require dataTables/jquery.dataTables
+#= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+#= require turbolinks
 #= require_tree .
 
 $(document).ready ->
+  $('#payments_list').DataTable()
   @showBirthdayForm = ->
     $(".student_birthdate").toggle()
     $("#b_link").hide()
+
